@@ -16,3 +16,14 @@ source ~/.bash_profile
 ```
 
 ```
+
+
+## git配置
+
+新增gitee源，国内github太卡了
+```
+git remote add  gitee  git@gitee.com:songjiang_951130/helper.git
+#常见操作
+git pull gitee master
+git push gitee master
+```

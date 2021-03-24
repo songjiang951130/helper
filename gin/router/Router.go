@@ -14,6 +14,6 @@ func InitRouter(r *gin.Engine) {
 	{
 		//参数path和 handler
 		GroupV1.Any("/stock/:symbol", stock.GetStock)
-		GroupV1.Any("/index", index.GetLowIndex)
+		GroupV1.GET("/index", index.GetLowIndex)
 	}
 }

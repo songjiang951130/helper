@@ -1,11 +1,8 @@
 package xueqiu
 
 import (
-	"fmt"
 	"os"
 )
-
-// const cookie = ""
 
 func GetCookie() string {
 	file, err := os.Open("cookie.txt")
@@ -19,9 +16,7 @@ func GetCookie() string {
 	}
 	filesize := fileinfo.Size()
 	buffer := make([]byte, filesize)
-
 	file.Read(buffer)
 	res := string(buffer)
-	fmt.Println("bytestream to string: ", string(buffer))
 	return res
 }

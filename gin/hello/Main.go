@@ -1,16 +1,16 @@
 package main
 
 import (
+	"helper/gin/router"
+
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	// gin.SetMode(gin.ReleaseMode)
+	// 默认启动方式，包含 Logger、Recovery 中间件
+	engine := gin.Default()
+	router.InitRouter(engine)
 	//visit http://localhost:8082/ping
-	r.Run(":8082") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	engine.Run(":8082")
 }

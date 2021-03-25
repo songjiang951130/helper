@@ -1,0 +1,33 @@
+{{template "header.html"}}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">低位指数<small>(roe>15,pe_time<33)</small>
+       </h3>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>symbol</th>
+            <th>roe</th>
+            <th>pe</th>
+            <th>peRate</th>
+            <th>pb</th>
+            <th>pbRate</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{ range $key, $value := .Dan}}
+        <tr>
+            <td id="{{$value.ID}}" >{{$value.Name}}</td>
+            <td>{{$value.IndexCode}}</td>
+            <td>{{$value.Roe}}</td>
+            <td>{{$value.Pe}}</td>
+            <td>{{$value.PePercentile}}</td>
+            <td>{{$value.Pb}}</td>
+            <td>{{$value.PbPercentile}}</td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>

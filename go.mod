@@ -1,4 +1,4 @@
-module helper
+module helper-go
 
 go 1.16
 

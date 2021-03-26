@@ -10,7 +10,7 @@ import (
 const server_context string = "/go"
 
 func InitRouter(r *gin.Engine) {
-	r.LoadHTMLGlob("./resource/html/*")
+	loadTemplate(r)
 	r.GET(server_context, index.GetIndex)
 
 	// v1 版本
@@ -20,5 +20,8 @@ func InitRouter(r *gin.Engine) {
 		GroupV1.Any("/stock/:symbol", stock.GetStock)
 		GroupV1.GET("/index", index.GetLowIndex)
 	}
+}
 
+func loadTemplate(r *gin.Engine) {
+	r.LoadHTMLGlob("./resource/html/*.html")
 }

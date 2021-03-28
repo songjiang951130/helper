@@ -7,8 +7,6 @@ import (
 
 func GetLowIndex() []danjuan.Items {
 	items := danjuan.GetIndex()
-	typeStr := fmt.Sprintf("%T", items)
-	fmt.Println(typeStr)
 	low := make([]danjuan.Items, 0) // len(items))
 	for i := 0; i < len(items); i++ {
 		if items[i].Roe > 0.15 && items[i].PePercentile < 0.30 {
@@ -16,6 +14,5 @@ func GetLowIndex() []danjuan.Items {
 			low = append(low, items[i])
 		}
 	}
-
 	return low
 }

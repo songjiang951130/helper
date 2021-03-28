@@ -32,4 +32,36 @@
     </table>
 </div>
 
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">低PE推荐 <small>更新时间:
+            <td th:text="${updatedTime}">Onions</td>
+        </small></h3>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>symbol</th>
+            <th>pe</th>
+            <th>peRate</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{ range $key, $value := .LowPeList}}
+        <tr th:each="data : ${viewData}">
+            <td id="${data.symbol}" th:text="${data.name}">{{$value.Name}}</td>
+            <td th:text="${data.symbol}">{{$value.Symbol}}</td>
+            <td th:text="${data.pe}">{{$value.Pe}}</td>
+            <td th:text="${data.peRate}">{{$value.RateStr}}</td>
+            <td th:text="${data.startTime}">{{$value.StartTime}}</td>
+            <td th:text="${data.endTime}">{{$value.EndTime}}</td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
+
 {{template "footer.html"}}

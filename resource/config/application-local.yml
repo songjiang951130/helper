@@ -1,0 +1,4 @@
+datasource:
+  url: mysql://127.0.0.1:3306/dream?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+  username: dream
+  password: dream1234
